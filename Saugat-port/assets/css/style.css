@@ -24,6 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    max-width: auto;
 }
 
 /* ----- SMOOTH SCROLL ----- */
@@ -59,6 +60,7 @@ html{
     border-radius: 10px;
     cursor: pointer;
     transition: .4s;
+    text-decoration: none;
 }
 .btn>i{
     margin-left: 10px;
@@ -542,7 +544,7 @@ footer{
 }
 
 /* ----- MEDIA QUERY == 900px / RESPONSIVE ----- */
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 970px) {
     .nav-button{
         display: none;
     }
@@ -617,6 +619,9 @@ footer{
     .project-box{
         width: 80%;
     }
+    .scroll-btn{
+        top: 100%;
+    }
 
 }
 
@@ -635,4 +640,11 @@ footer{
     .input-field{
         width: 100%;
     }
-} 
+    .middle-footer .footer-menu{
+    font-size: 12px;
+    font-weight: 900;
+    }
+    .bottom-footer{
+        font-size: auto;
+    }
+}
