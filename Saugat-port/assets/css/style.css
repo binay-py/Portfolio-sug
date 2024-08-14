@@ -210,7 +210,7 @@ nav{
 }
 .social_icons{
     display: flex;
-    margin-top: 5em;
+    margin-top: 2em;
     gap: 30px;
 }
 .icon{
@@ -361,6 +361,7 @@ h3{
 }
 
 /* ----- PROJECTS BOX ----- */
+/* ----- PROJECTS BOX ----- */
 .project-container{
     display: flex;
     width: 100%;
@@ -368,6 +369,7 @@ h3{
     gap: 20px;
     flex-wrap: wrap;
 }
+
 .project-box{
     position: relative;
     display: flex;
@@ -380,16 +382,26 @@ h3{
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
+    transition: all 0.4s ease-in-out; /* Add transition for smooth hover effect */
 }
-.project-box>i{
+
+.project-box i{
     font-size: 50px;
-    color: #00B5E7;
+    color: transparent;
     margin-bottom: 25px;
 }
+
 .project-box label{
     font-size: 15px;
-    color: #777;
+    color: #ffffff;
 }
+
+.project-box p {
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    text-align: center;
+  }
+
 .project-box::after, .contact-info::after{
     content: "";
     position: absolute;
@@ -398,19 +410,35 @@ h3{
     width: 100%;
     height: 100%;
     transition: .4s;
-    z-index: 1;
+    z-index: 0;
 }
-.project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after{
+
+.project-box:hover::after {
     bottom: 0;
+    opacity: 0.7; /* Make the background semi-transparent on hover */
 }
-.project-box:hover.project-box i,
-.project-box:hover.project-box>h3,
-.project-box:hover.project-box>label{
-    color: var(--color-white);
+
+.project-box:hover i,
+.project-box:hover h3,
+.project-box:hover label,
+.project-box:hover p {
+    color: #000;
     z-index: 2;
 }
 
+/* Add this for the image to show through */
+.project-box img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: all 0.4s ease-in-out;
+}
+
+.project-box:hover img {
+    opacity: 0.6; /* Adjust the opacity of the image on hover */
+}
 /* ----- CONTACT BOX ----- */
 .contact-info{
     position: relative;
